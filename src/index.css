@@ -1,3 +1,17 @@
+
+:root{
+  --font: 'Montserrat', sans-serif;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #e2e2e2;
+}
+
+
+body {
+  font-family: var(--font);
+}
+
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
