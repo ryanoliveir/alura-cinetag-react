@@ -3,12 +3,17 @@ import Banner from "@components/Banner";
 import Title from "@components/Title";
 import videos from '../../api/db.json'
 import { useParams } from "react-router-dom";
+import NotFoundPage from '../404';
 
 const Player = () => {
 
     const { id } = useParams();
     
     const currentVideo = videos.find(video => video.id === Number(id));
+
+
+    if(!currentVideo) return <NotFoundPage />;
+
 
     return (
       <>
