@@ -4,8 +4,6 @@
     align-items: center;
     background-color: var(--black);
     height: 88px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 

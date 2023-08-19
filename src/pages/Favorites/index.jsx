@@ -1,9 +1,11 @@
-import styles from  './Favorites.module.css';
+// import styles from  './Favorites.module.css';
 
 
 const Favorites = () => {
     return (
-        <h1>/favorites</h1>
+        <>
+            <h1>favaorties</h1>
+        </>
     )
 }
 
