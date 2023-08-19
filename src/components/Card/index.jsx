@@ -1,6 +1,7 @@
 import styles from './Card.module.css'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import { useFavoriteContext } from '@contexts/Favorites'
+import { Link } from 'react-router-dom'
 
 const Card = ({ id,title, cover}) => {
 
@@ -16,7 +17,9 @@ const Card = ({ id,title, cover}) => {
 
     return (
         <div className={styles.container}>
-            <img src={cover} alt={title} className={styles.cover}/>
+            <Link className={styles.link} to={`/player/${id}`}>
+                <img src={cover} alt={title} className={styles.cover}/>
+            </Link>
             <div className={styles.card_content}>
                 <h3>{title}</h3>
             </div>
