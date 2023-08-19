@@ -13,7 +13,9 @@ export default defineConfig({
       // eslint-disable-next-line no-undef
       '@pages': path.resolve(__dirname, './src/pages'),
       // eslint-disable-next-line no-undef
-      '@components': path.resolve(__dirname, './src/components')
+      '@components': path.resolve(__dirname, './src/components'),
+      // eslint-disable-next-line no-undef
+      '@contexts': path.resolve(__dirname, './src/contexts')
     }
   },
   server: {

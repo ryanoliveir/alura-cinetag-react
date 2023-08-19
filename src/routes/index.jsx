@@ -4,17 +4,20 @@ import Favorites from "@pages/Favorites";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Container from "@components/Container";
+import { FavoritesProvider } from "../contexts/Favorites";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Header />
       <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<Favorites />} />
-        </Routes>
-      </Container>;
+        <FavoritesProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Routes>
+        </FavoritesProvider>
+      </Container>
       <Footer />
     </BrowserRouter>
   );
