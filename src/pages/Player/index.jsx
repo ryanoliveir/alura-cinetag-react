@@ -1,15 +1,24 @@
 import styles from './Player.module.css';
 import Banner from "@components/Banner";
 import Title from "@components/Title";
-import videos from '../../api/db.json'
+import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import NotFoundPage from '../404';
 
 const Player = () => {
 
-    const { id } = useParams();
-    
-    const currentVideo = videos.find(video => video.id === Number(id));
+  const [currentVideo, setVideo] = useState([]);
+  const { id } = useParams();
+
+  const API = `http://localhost:3000/videos?id=${id}`;
+
+    useEffect(() => {
+      fetch(API)
+       .then(response => response.json())
+       .then(data => {
+        setVideo(...data);
+       })
+    },[API]);
 
 
     if(!currentVideo) return <NotFoundPage />;

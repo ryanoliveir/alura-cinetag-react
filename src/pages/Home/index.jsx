@@ -1,9 +1,24 @@
 import Banner from "@components/Banner";
 import Title from "@components/Title";
 import Card from "@components/Card";
-import videos from "../../api/db.json";
+// import videos from "../../api/db.json";
 import styles from "./Home.module.css";
+import { useEffect, useState } from "react";
 const Home = () => {
+
+  const [ videos, setVideos] = useState([]);
+
+  const API = 'http://localhost:3000/videos';
+
+  useEffect(() => {
+    fetch(API)
+     .then(response => response.json())
+     .then(data => {
+       setVideos(data);
+
+     })
+  },[]);
+
   return (
     <>
       <Banner image="home" />
